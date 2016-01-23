@@ -1,0 +1,10 @@
+<resources>
+    <color name="blood_red">#ffbf1107</color>
+
+    <color name="severe">#EC3E40</color>
+    <color name="high">#FF9B2B</color>
+    <color name="elevated">#F5D800</color>
+    <color name="guarded">#377FC7</color>
+    <color name="low">#01A46D</color>
+
+</resources>

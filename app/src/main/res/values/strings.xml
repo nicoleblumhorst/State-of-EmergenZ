@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">StateOfEmergenZ</string>
+
+    <string-array name="nav_drawer_items">
+        <item>Threat Level</item>
+        <item>ZNews</item>
+        <item>App Info</item>
+    </string-array>
+
+    <string name="nav_drawer_threat_level">Threat Level</string>
+    <string name="nav_drawer_news">ZNews</string>
+    <string name="nav_drawer_app_info">App Info</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="warning_level">Warning Level:</string>
+    <string name="news">Znews</string>
+
+    <string name="severe">Severe</string>
+    <string name="high">High</string>
+    <string name="elevated">Elevated</string>
+    <string name="guarded">Guarded</string>
+    <string name="low">Low</string>
+
+</resources>
