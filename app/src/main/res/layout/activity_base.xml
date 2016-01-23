@@ -1,22 +1,37 @@
-<android.support.v4.widget.DrawerLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WarningLevelActivity">
+    android:orientation="vertical">
 
-    <FrameLayout android:id="@+id/container"
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="?attr/colorPrimaryDark">
+        </android.support.v7.widget.Toolbar>
 
-    <ListView android:id="@+id/left_drawer"
-        android:layout_width="240dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:choiceMode="singleChoice"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="0dp"
-        android:background="#111"/>
+    <android.support.v4.widget.DrawerLayout
 
-</android.support.v4.widget.DrawerLayout>
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+
+        <FrameLayout android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent">
+            </FrameLayout>
+
+        <ListView android:id="@+id/left_drawer"
+            android:layout_width="240dp"
+            android:layout_height="fill_parent"
+            android:layout_gravity="start"
+            android:choiceMode="singleChoice"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:background="#111"/>
+
+    </android.support.v4.widget.DrawerLayout>
+</LinearLayout>

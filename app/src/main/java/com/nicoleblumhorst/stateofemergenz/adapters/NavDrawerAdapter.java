@@ -29,8 +29,6 @@ public class NavDrawerAdapter extends ArrayAdapter<NavDrawerItem> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        View listItem = convertView;
-
         NavDrawerItem menuItem = (NavDrawerItem) getItem(position);
         LayoutInflater inflater = LayoutInflater.from(getContext());
         ViewHolder holder;
@@ -52,7 +50,7 @@ public class NavDrawerAdapter extends ArrayAdapter<NavDrawerItem> {
             holder.iconImageView.setVisibility(View.INVISIBLE);
         }
 
-        return listItem;
+        return convertView;
     }
 
     static class ViewHolder {

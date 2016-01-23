@@ -7,6 +7,9 @@
         <item>App Info</item>
     </string-array>
 
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+
     <string name="nav_drawer_threat_level">Threat Level</string>
     <string name="nav_drawer_news">ZNews</string>
     <string name="nav_drawer_app_info">App Info</string>
