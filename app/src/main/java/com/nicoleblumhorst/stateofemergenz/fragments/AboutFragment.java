@@ -15,10 +15,10 @@ import butterknife.ButterKnife;
 public class AboutFragment extends BaseFragment {
 
 
-    public static NewsFragment newInstance() {
+    public static AboutFragment newInstance() {
         Bundle args = new Bundle();
 
-        NewsFragment fragment = new NewsFragment();
+        AboutFragment fragment = new AboutFragment();
         fragment.setArguments(args);
 
         return fragment;

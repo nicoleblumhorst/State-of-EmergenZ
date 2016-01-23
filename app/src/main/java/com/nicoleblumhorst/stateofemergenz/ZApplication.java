@@ -2,21 +2,21 @@ package com.nicoleblumhorst.stateofemergenz;
 
 import android.app.Application;
 
-import com.nicoleblumhorst.stateofemergenz.utils.WarningLevel;
+import com.nicoleblumhorst.stateofemergenz.utils.ThreatLevel;
 
 /**
  * Created by nicoleblumhorst on 1/17/16.
  */
 public class ZApplication extends Application {
 
-    private WarningLevel warningLevel;
+    private ThreatLevel threatLevel;
 
-    public WarningLevel getWarningLevel() {
-        return warningLevel;
+    public ThreatLevel getThreatLevel() {
+        return threatLevel;
     }
 
-    public void setWarningLevel(WarningLevel warningLevel) {
-        this.warningLevel = warningLevel;
+    public void setThreatLevel(ThreatLevel warningLevel) {
+        this.threatLevel = warningLevel;
     }
 
 }

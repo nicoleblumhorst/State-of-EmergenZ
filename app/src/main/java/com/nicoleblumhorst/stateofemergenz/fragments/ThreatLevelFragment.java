@@ -7,47 +7,47 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.nicoleblumhorst.stateofemergenz.R;
-import com.nicoleblumhorst.stateofemergenz.utils.WarningLevel;
+import com.nicoleblumhorst.stateofemergenz.utils.ThreatLevel;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class WarningLevelFragment extends BaseFragment {
+public class ThreatLevelFragment extends BaseFragment {
 
     public static final String LEVEL_KEY = "LEVEL_KEY";
 
-    public WarningLevel warningLevel;
+    public ThreatLevel threatLevel;
 
     @Bind(R.id.wlf_level_text_view)
     TextView levelTextView;
 
-    public static WarningLevelFragment newInstance(WarningLevel level) {
+    public static ThreatLevelFragment newInstance(ThreatLevel level) {
         Bundle args = new Bundle();
         args.putSerializable(LEVEL_KEY, level);
 
-        WarningLevelFragment fragment = new WarningLevelFragment();
+        ThreatLevelFragment fragment = new ThreatLevelFragment();
         fragment.setArguments(args);
 
         return fragment;
     }
 
-    public WarningLevelFragment() {
+    public ThreatLevelFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
 
-        View view = inflater.inflate(R.layout.fragment_warning_level, container, false);
+        View view = inflater.inflate(R.layout.fragment_threat_level, container, false);
         ButterKnife.bind(this, view);
 
         if (savedInstanceState != null)
-            warningLevel = (WarningLevel) savedInstanceState.getSerializable(LEVEL_KEY);
+            threatLevel = (ThreatLevel) savedInstanceState.getSerializable(LEVEL_KEY);
         else
-            warningLevel = WarningLevel.LOW;
+            threatLevel = ThreatLevel.LOW;
 
-        levelTextView.setText(getString(warningLevel.getString()));
+        levelTextView.setText(getString(threatLevel.getString()));
 
         return view;
     }

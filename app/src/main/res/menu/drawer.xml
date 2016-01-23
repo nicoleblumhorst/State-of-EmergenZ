@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/threat_level_menu_item"
+            android:checked="true"
+            android:title="@string/nav_drawer_threat_level" />
+
+        <item android:id="@+id/news_menu_item"
+            android:checked="false"
+            android:title="@string/nav_drawer_news" />
+
+        <item android:id="@+id/about_menu_item"
+            android:checked="false"
+            android:title="@string/nav_drawer_about" />
+    </group>
+</menu>

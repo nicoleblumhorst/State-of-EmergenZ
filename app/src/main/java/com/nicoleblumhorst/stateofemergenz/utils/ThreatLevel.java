@@ -5,7 +5,7 @@ import com.nicoleblumhorst.stateofemergenz.R;
 /**
  * Created by nicoleblumhorst on 1/11/16.
  */
-public enum WarningLevel {
+public enum ThreatLevel {
 
     SEVERE (R.color.severe, R.string.severe),
     HIGH (R.color.high, R.string.high),
@@ -16,7 +16,7 @@ public enum WarningLevel {
     private final int color;
     private final int string;
 
-    WarningLevel(int color, int string) {
+    ThreatLevel(int color, int string) {
         this.color = color;
         this.string = string;
     }
