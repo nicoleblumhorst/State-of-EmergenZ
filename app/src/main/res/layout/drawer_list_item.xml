@@ -20,6 +20,6 @@
         android:layout_toRightOf="@id/ndi_image_view"
         android:paddingRight="10dp"
         android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:textColor="#ffffff" />
+        android:textColor="@android:color/black" />
 
 </LinearLayout>

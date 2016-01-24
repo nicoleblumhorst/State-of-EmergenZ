@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">StateOfEmergenZ</string>
+    <string name="app_name">State of EmergenZ</string>
 
     <string-array name="nav_drawer_items">
         <item>Threat Level</item>
@@ -28,5 +28,23 @@
     <string name="elevated">Elevated</string>
     <string name="guarded">Guarded</string>
     <string name="low">Low</string>
+
+    <!-- About Fragment -->
+    <string name="report_issue">Report Issue</string>
+    <string name="email_me">Email me if you find any bugs: <a href="mailto:nicoleblumhorst@gmail.com">nicoleblumhorst@gmail.com</a></string>
+
+    <string name="about_the_app"><b>About the App</b></string>
+    <string name="why"><b>Why does this app exist?</b>  One day I was talking to my manager about <i>The Walking Dead</i> and other things that had come up in the news about the possibility of an impeding zombie apocalypse.  We realized there was no system in place to warn people when it does begin (see <i>Fear the Walking Dead</i> if you don’t believe me) so we decided there was a definite need for this app. </string>
+    <string name="version_number"><b>Version Number:</b></string>
+
+    <string name="about_the_developer"><b>About the Developer</b></string>
+    <string name="name"><b>Name:</b> Nicole Blumhorst</string>
+    <string name="website"><b>Website:</b> <a href="nicoleblumhorst.com">nicoleblumhorst.com</a></string>
+    <string name="nickname"><b>Nickname:</b> Coleslaw</string>
+    <string name="favorite_book"><b>Favorite Book:</b> <i>Harry Potter and the Deathly Hallows</i> or <i>Hyperbole and a Half</i></string>
+    <string name="last_concert"><b>Last Concert:</b> Taylor Swift (<i>If/Then</i> if you wanna count musicals)</string>
+    <string name="favorite_character"><b>Favorite Character on <i>The Walking Dead</i>:</b> Michonne</string>
+    <string name="favorite_youtuber"><b>Favorite YouTuber:</b> Hannah Hart</string>
+
 
 </resources>

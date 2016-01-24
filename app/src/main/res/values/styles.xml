@@ -1,35 +1,48 @@
 <resources>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:buttonStyle">@style/FlatButton</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="LowTheme" parent="AppTheme">
         <item name="colorPrimary">@color/low</item>
-        <item name="colorPrimaryDark">@color/low</item>
+        <item name="colorPrimaryDark">@color/low_dark</item>
     </style>
 
     <style name="GuardedTheme" parent="AppTheme">
         <item name="colorPrimary">@color/guarded</item>
-        <item name="colorPrimaryDark">@color/guarded</item>
+        <item name="colorPrimaryDark">@color/guarded_dark</item>
     </style>
 
     <style name="EleveatedTheme" parent="AppTheme">
         <item name="colorPrimary">@color/elevated</item>
-        <item name="colorPrimaryDark">@color/elevated</item>
+        <item name="colorPrimaryDark">@color/elevated_dark</item>
     </style>
 
     <style name="HighTheme" parent="AppTheme">
         <item name="colorPrimary">@color/high</item>
-        <item name="colorPrimaryDark">@color/high</item>
+        <item name="colorPrimaryDark">@color/high_dark</item>
     </style>
 
     <style name="SevereTheme" parent="AppTheme">
         <item name="colorPrimary">@color/severe</item>
-        <item name="colorPrimaryDark">@color/severe</item>
+        <item name="colorPrimaryDark">@color/severe_dark</item>
     </style>
 
-    <style name="FlatButton" parent="Widget.AppCompat.Button.Borderless">
+    <style name="FlatButton" parent="Widget.AppCompat.Button.Borderless.Colored">
         <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/button_color</item>
+    </style>
+
+    <style name="SectionHeader">
+        <item name="android:drawableBottom">@drawable/section_header</item>
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:paddingTop">@dimen/vertical_margin</item>
+        <item name="android:paddingBottom">@dimen/vertical_margin</item>
     </style>
 
 </resources>

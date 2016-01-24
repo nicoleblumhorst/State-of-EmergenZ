@@ -1,5 +1,6 @@
 package com.nicoleblumhorst.stateofemergenz.activities;
 
+import android.content.pm.PackageInfo;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -23,7 +24,6 @@ import android.widget.ListView;
 
 import com.nicoleblumhorst.stateofemergenz.R;
 import com.nicoleblumhorst.stateofemergenz.ZApplication;
-import com.nicoleblumhorst.stateofemergenz.adapters.NavDrawerAdapter;
 import com.nicoleblumhorst.stateofemergenz.fragments.AboutFragment;
 import com.nicoleblumhorst.stateofemergenz.fragments.BaseFragment;
 import com.nicoleblumhorst.stateofemergenz.fragments.NewsFragment;
@@ -44,13 +44,13 @@ public class ThreatLevelActivity extends AppCompatActivity
     private static final String NAV_DRAWER_SELECTED_ID = "NAV_DRAWER_SELECTED_ID";
 
     @Bind(R.id.drawer_layout)
-    public DrawerLayout drawerLayout;
+    DrawerLayout drawerLayout;
 
     @Bind(R.id.navigation_view)
     NavigationView navigationView;
 
     @Bind(R.id.toolbar)
-    public Toolbar toolbar;
+    Toolbar toolbar;
 
     private int mNavDrawerSelectedId;
     private ActionBarDrawerToggle mDrawerToggle;
