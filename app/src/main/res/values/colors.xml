@@ -1,10 +1,23 @@
 <resources>
-    <color name="blood_red">#ffbf1107</color>
 
-    <color name="severe">#EC3E40</color>
-    <color name="high">#FF9B2B</color>
-    <color name="elevated">#F5D800</color>
-    <color name="guarded">#377FC7</color>
-    <color name="low">#01A46D</color>
+    <color name="severe">#F44336</color>
+    <color name="severe_light">#FFEBEE</color>
+    <color name="severe_dark">#D32F2F</color>
+
+    <color name="high">#FF9800</color>
+    <color name="high_light">#FFF3E0</color>
+    <color name="high_dark">#F57C00</color>
+
+    <color name="elevated">#FFEB3B</color>
+    <color name="elevated_light">#FFFDE7</color>
+    <color name="elevated_dark">#FBC02D</color>
+
+    <color name="guarded">#2196F3</color>
+    <color name="guarded_light">#E3F2FD</color>
+    <color name="guarded_dark">#1976D2</color>
+
+    <color name="low">#4CAF50</color>
+    <color name="low_light">#E8F5E9</color>
+    <color name="low_dark">#388E3C</color>
 
 </resources>

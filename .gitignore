@@ -7,4 +7,5 @@
 /captures
 .idea/*
 build/
-**/*.iml
+*.iml
+app/app.iml

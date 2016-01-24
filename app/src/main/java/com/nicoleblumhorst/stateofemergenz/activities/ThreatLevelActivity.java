@@ -1,10 +1,14 @@
 package com.nicoleblumhorst.stateofemergenz.activities;
 
 import android.content.res.Configuration;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
@@ -53,6 +58,17 @@ public class ThreatLevelActivity extends AppCompatActivity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // TODO: Set this correctly
+        setThreatLevel(ThreatLevel.GUARDED);
+
+        setTheme(getThreatLevel().getTheme());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, getThreatLevel().getColorDark()));
+            getWindow().getDecorView().setBackgroundColor(ContextCompat.getColor(this, getThreatLevel().getColorLight()));
+        }
+
         setContentView(R.layout.activity_base);
         ButterKnife.bind(this);
 
@@ -60,9 +76,6 @@ public class ThreatLevelActivity extends AppCompatActivity
             mNavDrawerSelectedId = savedInstanceState.getInt(NAV_DRAWER_SELECTED_ID, R.id.threat_level_menu_item);
         else
             mNavDrawerSelectedId = R.id.threat_level_menu_item;
-
-        // TODO: Set this correctly
-        setThreatLevel(ThreatLevel.LOW);
 
         if (toolbar != null) {
             setSupportActionBar(toolbar);

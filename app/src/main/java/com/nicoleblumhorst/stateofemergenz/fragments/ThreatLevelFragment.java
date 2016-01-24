@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nicoleblumhorst.stateofemergenz.R;
@@ -19,8 +20,8 @@ public class ThreatLevelFragment extends BaseFragment {
 
     public ThreatLevel threatLevel;
 
-    @Bind(R.id.wlf_level_text_view)
-    TextView levelTextView;
+    @Bind(R.id.wlf_level_image_view)
+    ImageView levelImageView;
 
     public static ThreatLevelFragment newInstance(ThreatLevel level) {
         Bundle args = new Bundle();
@@ -42,14 +43,21 @@ public class ThreatLevelFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_threat_level, container, false);
         ButterKnife.bind(this, view);
 
-        if (savedInstanceState != null)
+        if (getArguments() != null)
+            threatLevel = (ThreatLevel) getArguments().getSerializable(LEVEL_KEY);
+        else if (savedInstanceState != null)
             threatLevel = (ThreatLevel) savedInstanceState.getSerializable(LEVEL_KEY);
         else
             threatLevel = ThreatLevel.LOW;
 
-        levelTextView.setText(getString(threatLevel.getString()));
+        levelImageView.setImageResource(threatLevel.getDrawable());
 
         return view;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle bundle) {
+        bundle.putSerializable(LEVEL_KEY, threatLevel);
     }
 
     @OnClick(R.id.wlf_news_button)

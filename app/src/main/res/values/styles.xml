@@ -1,21 +1,35 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
-
-    <style name="AppTheme.Base" parent="Theme.AppCompat">
-        <item name="android:windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
     </style>
 
-    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
-        <item name="spinBars">true</item>
-        <item name="color">@android:color/white</item>
+    <style name="LowTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/low</item>
+        <item name="colorPrimaryDark">@color/low</item>
     </style>
 
-    <style name="Button">
+    <style name="GuardedTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/guarded</item>
+        <item name="colorPrimaryDark">@color/guarded</item>
+    </style>
+
+    <style name="EleveatedTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/elevated</item>
+        <item name="colorPrimaryDark">@color/elevated</item>
+    </style>
+
+    <style name="HighTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/high</item>
+        <item name="colorPrimaryDark">@color/high</item>
+    </style>
+
+    <style name="SevereTheme" parent="AppTheme">
+        <item name="colorPrimary">@color/severe</item>
+        <item name="colorPrimaryDark">@color/severe</item>
+    </style>
+
+    <style name="FlatButton" parent="Widget.AppCompat.Button.Borderless">
         <item name="android:textSize">24sp</item>
-        <!--<item name="android:background">@color/blood_red</item>-->
     </style>
 
 </resources>

@@ -18,6 +18,7 @@
 
     <string name="action_settings">Settings</string>
 
+    <string name="zombie">Zombie</string>
     <string name="threat_level">Threat Level:</string>
     <string name="news">Znews</string>
 
