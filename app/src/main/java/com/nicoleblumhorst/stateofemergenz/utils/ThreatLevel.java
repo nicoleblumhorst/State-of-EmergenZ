@@ -7,12 +7,13 @@ import com.nicoleblumhorst.stateofemergenz.R;
  */
 public enum ThreatLevel {
 
-    SEVERE (R.style.SevereTheme, R.color.severe, R.color.severe_light, R.color.severe_dark, R.string.severe, R.drawable.severe),
-    HIGH (R.style.HighTheme, R.color.high, R.color.high_light, R.color.high_dark, R.string.high, R.drawable.high),
-    ELEVATED (R.style.EleveatedTheme, R.color.elevated, R.color.elevated_light, R.color.elevated_dark, R.string.elevated, R.drawable.elevated),
-    GUARDED (R.style.GuardedTheme, R.color.guarded, R.color.guarded_light, R.color.guarded_dark, R.string.guarded, R.drawable.guarded),
-    LOW (R.style.LowTheme, R.color.low, R.color.low_light, R.color.low_dark, R.string.low, R.drawable.low);
+    SEVERE ("SEVERE", R.style.SevereTheme, R.color.severe, R.color.severe_light, R.color.severe_dark, R.string.severe, R.drawable.severe),
+    HIGH ("HIGH", R.style.HighTheme, R.color.high, R.color.high_light, R.color.high_dark, R.string.high, R.drawable.high),
+    ELEVATED ("ELEVATED", R.style.EleveatedTheme, R.color.elevated, R.color.elevated_light, R.color.elevated_dark, R.string.elevated, R.drawable.elevated),
+    GUARDED ("GUARDED", R.style.GuardedTheme, R.color.guarded, R.color.guarded_light, R.color.guarded_dark, R.string.guarded, R.drawable.guarded),
+    LOW ("LOW", R.style.LowTheme, R.color.low, R.color.low_light, R.color.low_dark, R.string.low, R.drawable.low);
 
+    private final String key;
     private final int theme;
     private final int color;
     private final int colorLight;
@@ -20,7 +21,8 @@ public enum ThreatLevel {
     private final int string;
     private final int drawable;
 
-    ThreatLevel(int theme, int color, int colorLight, int colorDark, int string, int drawable) {
+    ThreatLevel(String key, int theme, int color, int colorLight, int colorDark, int string, int drawable) {
+        this.key = key;
         this.theme = theme;
         this.color = color;
         this.colorLight = colorLight;
@@ -29,28 +31,18 @@ public enum ThreatLevel {
         this.drawable = drawable;
     }
 
-    public int getTheme() {
-        return theme;
-    }
+    public String getKey() { return key; }
 
-    public int getColor() {
-        return color;
-    }
+    public int getTheme() { return theme; }
 
-    public int getColorLight() {
-        return colorLight;
-    }
+    public int getColor() { return color; }
 
-    public int getColorDark() {
-        return colorDark;
-    }
+    public int getColorLight() { return colorLight; }
 
-    public int getString() {
-        return string;
-    }
+    public int getColorDark() { return colorDark; }
 
-    public int getDrawable() {
-        return drawable;
-    }
+    public int getString() { return string; }
+
+    public int getDrawable() { return drawable; }
 
 }

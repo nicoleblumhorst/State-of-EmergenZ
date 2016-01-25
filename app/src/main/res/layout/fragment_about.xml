@@ -85,6 +85,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/vertical_margin"
             android:paddingBottom="@dimen/vertical_margin"
+            android:autoLink="web"
             android:text="@string/website"/>
 
         <TextView

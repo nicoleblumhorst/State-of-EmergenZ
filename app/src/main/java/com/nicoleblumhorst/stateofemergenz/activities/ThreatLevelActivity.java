@@ -1,9 +1,6 @@
 package com.nicoleblumhorst.stateofemergenz.activities;
 
-import android.content.pm.PackageInfo;
 import android.content.res.Configuration;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -15,12 +12,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.WindowManager;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 import com.nicoleblumhorst.stateofemergenz.R;
 import com.nicoleblumhorst.stateofemergenz.ZApplication;
@@ -28,10 +21,7 @@ import com.nicoleblumhorst.stateofemergenz.fragments.AboutFragment;
 import com.nicoleblumhorst.stateofemergenz.fragments.BaseFragment;
 import com.nicoleblumhorst.stateofemergenz.fragments.NewsFragment;
 import com.nicoleblumhorst.stateofemergenz.fragments.ThreatLevelFragment;
-import com.nicoleblumhorst.stateofemergenz.models.NavDrawerItem;
 import com.nicoleblumhorst.stateofemergenz.utils.ThreatLevel;
-
-import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -69,7 +59,7 @@ public class ThreatLevelActivity extends AppCompatActivity
             getWindow().getDecorView().setBackgroundColor(ContextCompat.getColor(this, getThreatLevel().getColorLight()));
         }
 
-        setContentView(R.layout.activity_base);
+        setContentView(R.layout.activity_threat_level);
         ButterKnife.bind(this);
 
         if (savedInstanceState != null)
@@ -107,7 +97,7 @@ public class ThreatLevelActivity extends AppCompatActivity
                 fragment = ThreatLevelFragment.newInstance(getThreatLevel());
                 break;
             case R.id.news_menu_item:
-                fragment = NewsFragment.newInstance();
+                fragment = NewsFragment.newInstance(getZApplication().getZombieNews().getStories());
                 break;
             case R.id.about_menu_item:
                 fragment = AboutFragment.newInstance();

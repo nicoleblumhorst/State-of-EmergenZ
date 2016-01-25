@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
+    android:background="@android:color/white">
 
-    <TextView
-        android:id="@+id/cvna_title"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="News Article Header"/>
+        android:orientation="vertical"
+        android:padding="10dp">
 
-    <TextView
-        android:id="@+id/cvna_article"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel aliquet
-                      turpis. Suspendisse sed massa quis velit malesuada luctus. Nulla orci sapien,
-                      tincidunt sit amet lorem vitae, maximus pharetra orci. Sed id condimentum
-                      mauris, in pretium mi. Ut laoreet orci sit amet magna euismod, eu"/>
+        <TextView
+            android:id="@+id/cvna_headline"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/SectionHeader"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        />
+        <TextView
+            android:id="@+id/cvna_highlight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/cvna_byline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|bottom"/>
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
