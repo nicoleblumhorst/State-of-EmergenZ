@@ -10,26 +10,75 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/cvna_headline"
+        <View
+            android:id="@+id/cvna_level_color"
+            android:layout_width="5dp"
+            android:layout_height="fill_parent"/>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            style="@style/SectionHeader"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/cvna_highlight"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-        <TextView
-            android:id="@+id/cvna_byline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|bottom"/>
+                <TextView
+                    android:id="@+id/cvna_headline"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    style="@style/CardHeader"/>
+
+                <TextView
+                    android:id="@+id/cvna_highlight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"/>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/cvna_byline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:textColor="#FF9B9B9B"/>
+
+                    <TextView
+                        android:id="@+id/cvna_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="#FF9B9B9B"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#EEEEEE">
+
+                <Button
+                    android:id="@+id/cvna_link"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/CardButton"
+                    android:layout_alignParentRight="true"
+                    android:text="Full Story"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 

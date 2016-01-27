@@ -12,8 +12,7 @@
         android:layout_height="wrap_content"
         android:maxHeight="150dp"
         android:layout_centerInParent="true"
-        android:adjustViewBounds= "true"
-        />
+        android:adjustViewBounds= "true" />
 
     <TextView android:id="@+id/wlf_threat_level_text_view"
         android:layout_width="wrap_content"
@@ -21,8 +20,8 @@
         android:layout_centerHorizontal="true"
         android:layout_above="@id/wlf_level_image_view"
         android:textSize="30sp"
-        android:text="@string/threat_level"
-        />
+        android:textColor="@android:color/white"
+        android:text="@string/threat_level" />
 
     <TextView android:id="@+id/wlf_zombie_text_view"
         android:layout_width="wrap_content"
@@ -30,8 +29,8 @@
         android:layout_centerHorizontal="true"
         android:layout_above="@id/wlf_threat_level_text_view"
         android:textSize="30sp"
-        android:text="@string/zombie"
-        />
+        android:textColor="@android:color/white"
+        android:text="@string/zombie" />
 
     <Button
         android:id="@+id/wlf_news_button"
@@ -39,15 +38,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/news"
-        />
+        android:textSize="24dp"
+        android:text="@string/news"  />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/ic_help_outline_black_36dp"
-        />
+        android:src="@drawable/ic_help_outline_black_36dp" />
 
 </RelativeLayout>

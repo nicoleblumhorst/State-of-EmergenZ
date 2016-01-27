@@ -1,16 +1,24 @@
 package com.nicoleblumhorst.stateofemergenz.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nicoleblumhorst.stateofemergenz.R;
 import com.nicoleblumhorst.stateofemergenz.models.NewsArticle;
+
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 
 import java.util.List;
 
@@ -32,7 +40,7 @@ public class NewsArticleAdapter extends ArrayAdapter<NewsArticle> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        NewsArticle newsArticle = (NewsArticle) getItem(position);
+        final NewsArticle newsArticle = (NewsArticle) getItem(position);
         ViewHolder holder;
 
         if (convertView != null) {
@@ -43,6 +51,9 @@ public class NewsArticleAdapter extends ArrayAdapter<NewsArticle> {
             convertView.setTag(holder);
         }
 
+        // TODO: set color based on story
+        holder.levelColorView.setBackgroundResource(R.color.guarded_dark);
+
         holder.headlineTextView.setText(newsArticle.getHeadline());
         holder.highlightTextView.setText(newsArticle.getArticleHighlight());
 
@@ -51,10 +62,27 @@ public class NewsArticleAdapter extends ArrayAdapter<NewsArticle> {
         else
             holder.bylineTextView.setVisibility(View.GONE);
 
+        DateTime dateTime = new DateTime(newsArticle.getDate());
+        if (dateTime != null)
+            holder.dateTextView.setText(dateTime.toString(DateTimeFormat.forPattern("MMM dd, yyyy")));
+        else
+            holder.dateTextView.setVisibility(View.GONE);
+
+        holder.linkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(newsArticle.getUrl()));
+                getContext().startActivity(browserIntent);
+            }
+        });
+
         return convertView;
     }
 
     static class ViewHolder {
+
+        @Bind(R.id.cvna_level_color)
+        View levelColorView;
 
         @Bind(R.id.cvna_headline)
         TextView headlineTextView;
@@ -64,6 +92,12 @@ public class NewsArticleAdapter extends ArrayAdapter<NewsArticle> {
 
         @Bind(R.id.cvna_byline)
         TextView bylineTextView;
+
+        @Bind(R.id.cvna_date)
+        TextView dateTextView;
+
+        @Bind(R.id.cvna_link)
+        Button linkButton;
 
         public ViewHolder(View view) {
             ButterKnife.bind(ViewHolder.this, view);

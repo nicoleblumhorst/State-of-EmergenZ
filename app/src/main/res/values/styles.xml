@@ -31,8 +31,11 @@
     </style>
 
     <style name="FlatButton" parent="Widget.AppCompat.Button.Borderless.Colored">
-        <item name="android:textSize">24sp</item>
-        <item name="android:textColor">@color/button_color</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="CardButton" parent="FlatButton">
+        <item name="android:textColor">@color/link_color</item>
     </style>
 
     <style name="SectionHeader">
@@ -40,9 +43,23 @@
         <item name="android:drawablePadding">4dp</item>
         <item name="android:textSize">20dp</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColor">@android:color/secondary_text_light</item>
         <item name="android:paddingTop">@dimen/vertical_margin</item>
         <item name="android:paddingBottom">@dimen/vertical_margin</item>
     </style>
+
+    <style name="CardHeader">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/secondary_text_light</item>
+        <item name="android:paddingBottom">@dimen/vertical_margin</item>
+    </style>
+
+    <!--<style name="CardHeader">-->
+        <!--<item name="android:textSize">20dp</item>-->
+        <!--<item name="android:textStyle">bold</item>-->
+        <!--<item name="android:textColor">@android:color/secondary_text_light</item>-->
+        <!--<item name="android:paddingBottom">@dimen/vertical_margin</item>-->
+    <!--</style>-->
 
 </resources>
