@@ -4,26 +4,26 @@
     <color name="link_color">#00BCD4</color>
     <color name="card_footer_color">#ffd7d7d7</color>
     <color name="background_color">#ffe6e6e6</color>
+    <color name="status_bar_color">#33000000</color>
 
     <color name="severe">#F44336</color>
-    <color name="severe_light">#FFEBEE</color>
-    <color name="severe_dark">#D32F2F</color>
+    <color name="severe_light">#E57373</color>
+    <color name="severe_dark">#E53935</color>
 
     <color name="high">#FF9800</color>
-    <color name="high_light">#FFF3E0</color>
-    <color name="high_dark">#F57C00</color>
+    <color name="high_light">#FFB74D</color>
+    <color name="high_dark">#FB8C00</color>
 
     <color name="elevated">#FFEB3B</color>
-    <color name="elevated_light">#FFFDE7</color>
-    <color name="elevated_dark">#FBC02D</color>
+    <color name="elevated_light">#FFF176</color>
+    <color name="elevated_dark">#FDD835</color>
 
     <color name="guarded">#2196F3</color>
-    <color name="guarded_light">#E3F2FD</color>
-    <color name="guarded_dark">#1976D2</color>
-    <color name="guarded_extra_dark">#1565C0</color>
+    <color name="guarded_light">#64B5F6</color>
+    <color name="guarded_dark">#1E88E5</color>
 
     <color name="low">#4CAF50</color>
-    <color name="low_light">#E8F5E9</color>
-    <color name="low_dark">#388E3C</color>
+    <color name="low_light">#81C784</color>
+    <color name="low_dark">#43A047</color>
 
 </resources>

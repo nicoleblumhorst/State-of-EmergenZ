@@ -5,10 +5,11 @@
         <item name="android:imageButtonStyle">@style/FlatButton</item>
         <item name="alertDialogTheme">@style/AppCompat.AlertDialogStyle</item>
         <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textColorLink">@color/link_color</item>
     </style>
 
     <style name="AppCompat.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
-        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorPrimary">?colorAccent</item>
     </style>
 
     <style name="AppCompat.AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
@@ -16,37 +17,37 @@
     </style>
 
     <style name="LowTheme" parent="AppTheme">
-        <item name="colorPrimary">@color/low</item>
-        <item name="colorPrimaryDark">@color/low_dark</item>
+        <item name="colorPrimary">@color/low_light</item>
+        <item name="colorPrimaryDark">@color/low</item>
         <item name="colorAccent">@android:color/white</item>
     </style>
 
     <style name="GuardedTheme" parent="AppTheme">
-        <item name="colorPrimary">@color/guarded</item>
-        <item name="colorPrimaryDark">@color/guarded_dark</item>
+        <item name="colorPrimary">@color/guarded_light</item>
+        <item name="colorPrimaryDark">@color/guarded</item>
         <item name="colorAccent">@android:color/white</item>
     </style>
 
     <style name="EleveatedTheme" parent="AppTheme">
-        <item name="colorPrimary">@color/elevated</item>
-        <item name="colorPrimaryDark">@color/elevated_dark</item>
+        <item name="colorPrimary">@color/elevated_light</item>
+        <item name="colorPrimaryDark">@color/elevated</item>
         <item name="colorAccent">@android:color/black</item>
     </style>
 
     <style name="HighTheme" parent="AppTheme">
-        <item name="colorPrimary">@color/high</item>
-        <item name="colorPrimaryDark">@color/high_dark</item>
+        <item name="colorPrimary">@color/high_light</item>
+        <item name="colorPrimaryDark">@color/high</item>
         <item name="colorAccent">@android:color/black</item>
     </style>
 
     <style name="SevereTheme" parent="AppTheme">
-        <item name="colorPrimary">@color/severe</item>
-        <item name="colorPrimaryDark">@color/severe_dark</item>
+        <item name="colorPrimary">@color/severe_light</item>
+        <item name="colorPrimaryDark">@color/severe</item>
         <item name="colorAccent">@android:color/white</item>
     </style>
 
     <style name="FlatButton" parent="Widget.AppCompat.Button.Borderless.Colored">
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColor">?colorAccent</item>
         <item name="android:textSize">@dimen/text_size_small</item>
     </style>
 

@@ -45,6 +45,4 @@ public enum ThreatLevel {
 
     public int getDescription() { return description; }
 
-    public int getColorExtraDark() { return R.color.guarded_extra_dark; }
-
 }

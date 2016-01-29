@@ -22,4 +22,29 @@ public class ThreatLevelUtil {
         }
     }
 
+    public static boolean isThreatLevelDarkTheme(ThreatLevel threatLevel) {
+        switch (threatLevel.getKey()) {
+            case Constants.ELEVATED:
+            case Constants.HIGH:
+                return true;
+            default:
+                return false;
+
+        }
+    }
+
+
+    // TODO: FIX IT! I know this is terrible practice.
+    public static int getThreatLevelFontSize(ThreatLevel threatLevel) {
+        switch (threatLevel.getKey()) {
+            case Constants.LOW:
+            case Constants.HIGH:
+                return 150;
+            case Constants.SEVERE:
+                return 110;
+            default:
+                return 80;
+        }
+    }
+
 }

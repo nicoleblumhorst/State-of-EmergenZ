@@ -56,7 +56,7 @@ public class ThreatLevelActivity extends AppCompatActivity
         setTheme(getThreatLevel().getTheme());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().setStatusBarColor(ContextCompat.getColor(this, getThreatLevel().getColorExtraDark()));
+            getWindow().setStatusBarColor(ContextCompat.getColor(this, getThreatLevel().getColorDark()));
         }
 
         setContentView(R.layout.activity_threat_level);

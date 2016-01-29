@@ -20,7 +20,7 @@
         android:layout_centerHorizontal="true"
         android:layout_above="@id/wlf_level_text_view"
         android:textSize="30sp"
-        android:textColor="@android:color/white"
+        android:textColor="?colorAccent"
         android:text="@string/threat_level" />
 
     <TextView android:id="@+id/wlf_zombie_text_view"
@@ -29,7 +29,7 @@
         android:layout_centerHorizontal="true"
         android:layout_above="@id/wlf_threat_level_text_view"
         android:textSize="30sp"
-        android:textColor="@android:color/white"
+        android:textColor="?colorAccent"
         android:text="@string/zombie" />
 
     <Button
