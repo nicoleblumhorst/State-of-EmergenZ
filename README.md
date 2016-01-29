@@ -2,7 +2,7 @@
 
 Android app displaying the threat level of the zombie apocalypse occurring. 
 
-* The App is more of a Proof of Concept right now. It needs some REST services to make the news articles and threat level maintainable. *
+*The App is more of a Proof of Concept right now. It needs some REST services to make the news articles and threat level maintainable.*
 
 ![Low Level Image](screenshots/severe.png?raw=true "Threat Level: Severe")
 ![Low Level Image](screenshots/threatLevelspng.png?raw=true "Threat Levels")
