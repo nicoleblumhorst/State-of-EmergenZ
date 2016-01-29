@@ -27,6 +27,8 @@ public class BaseFragment extends Fragment {
 
         public void showLevel();
 
+        public void showInfoDialog();
+
     }
 
 }

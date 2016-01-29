@@ -2,7 +2,18 @@
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:buttonStyle">@style/FlatButton</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:imageButtonStyle">@style/FlatButton</item>
+        <item name="alertDialogTheme">@style/AppCompat.AlertDialogStyle</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="AppCompat.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!-- Parent theme sets colorControlNormal to textColorPrimary. -->
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+    <style name="AppCompat.AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/link_color</item>
     </style>
 
     <style name="LowTheme" parent="AppTheme">
@@ -32,6 +43,7 @@
 
     <style name="FlatButton" parent="Widget.AppCompat.Button.Borderless.Colored">
         <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
     </style>
 
     <style name="CardButton" parent="FlatButton">
@@ -41,7 +53,7 @@
     <style name="SectionHeader">
         <item name="android:drawableBottom">@drawable/section_header</item>
         <item name="android:drawablePadding">4dp</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@android:color/secondary_text_light</item>
         <item name="android:paddingTop">@dimen/vertical_margin</item>
@@ -49,7 +61,7 @@
     </style>
 
     <style name="CardHeader">
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@android:color/secondary_text_light</item>
         <item name="android:paddingBottom">@dimen/vertical_margin</item>

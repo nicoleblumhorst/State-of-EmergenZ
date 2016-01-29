@@ -1,5 +1,6 @@
 package com.nicoleblumhorst.stateofemergenz.activities;
 
+import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -49,14 +51,10 @@ public class ThreatLevelActivity extends AppCompatActivity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // TODO: Set this correctly
-        setThreatLevel(ThreatLevel.GUARDED);
-
         setTheme(getThreatLevel().getTheme());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             getWindow().setStatusBarColor(ContextCompat.getColor(this, getThreatLevel().getColorExtraDark()));
-            getWindow().getDecorView().setBackgroundColor(ContextCompat.getColor(this, getThreatLevel().getColor()));
         }
 
         setContentView(R.layout.activity_threat_level);
@@ -66,6 +64,8 @@ public class ThreatLevelActivity extends AppCompatActivity
             mNavDrawerSelectedId = savedInstanceState.getInt(NAV_DRAWER_SELECTED_ID, R.id.threat_level_menu_item);
         else
             mNavDrawerSelectedId = R.id.threat_level_menu_item;
+
+
 
         if (toolbar != null) {
             setSupportActionBar(toolbar);
@@ -160,6 +160,22 @@ public class ThreatLevelActivity extends AppCompatActivity
         mNavDrawerSelectedId = R.id.threat_level_menu_item;
         navigationView.setCheckedItem(mNavDrawerSelectedId);
         showFragment(mNavDrawerSelectedId);
+    }
+
+    @Override
+    public void showInfoDialog() {
+
+        AlertDialog dialog = new AlertDialog.Builder(this)
+                .setView(getLayoutInflater().inflate(R.layout.fragment_threat_level_info_dialog, null))
+                .setNegativeButton(R.string.close,
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                dialog.dismiss();
+                            }
+                        }
+                )
+                .create();
+        dialog.show();
     }
 
 }

@@ -14,14 +14,18 @@ public class NewsArticle implements Parcelable {
     String credits;
     String articleHighlight;
     String url;
+    String imageUrl;
+    String threatLevel;
 
-    public NewsArticle(String headline, String byline, String date, String credits, String articleHighlight, String url) {
+    public NewsArticle(String headline, String byline, String date, String credits, String articleHighlight, String url, String imageUrl, String threatLevel) {
         this.headline = headline;
         this.byline = byline;
         this.date = date;
         this.credits = credits;
         this.articleHighlight = articleHighlight;
         this.url = url;
+        this.imageUrl = imageUrl;
+        this.threatLevel = threatLevel;
     }
 
     protected NewsArticle(Parcel in) {
@@ -31,6 +35,8 @@ public class NewsArticle implements Parcelable {
         credits = in.readString();
         articleHighlight = in.readString();
         url = in.readString();
+        imageUrl = in.readString();
+        threatLevel = in.readString();
     }
 
     public String getHeadline() {
@@ -81,6 +87,22 @@ public class NewsArticle implements Parcelable {
         this.url = url;
     }
 
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getThreatLevel() {
+        return threatLevel;
+    }
+
+    public void setThreatLevel(String threatLevel) {
+        this.threatLevel = threatLevel;
+    }
+
     @Override
     public String toString() {
         return "NewsArticle{" +
@@ -90,6 +112,8 @@ public class NewsArticle implements Parcelable {
                 ", credits='" + credits + '\'' +
                 ", articleHighlight='" + articleHighlight + '\'' +
                 ", url='" + url + '\'' +
+                ", imageUrl='" + imageUrl + '\'' +
+                ", threatLevel='" + threatLevel + '\'' +
                 '}';
     }
 
@@ -106,6 +130,8 @@ public class NewsArticle implements Parcelable {
         dest.writeString(credits);
         dest.writeString(articleHighlight);
         dest.writeString(url);
+        dest.writeString(imageUrl);
+        dest.writeString(threatLevel);
     }
 
     @SuppressWarnings("unused")

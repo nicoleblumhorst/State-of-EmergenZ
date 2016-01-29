@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     app:cardPreventCornerOverlap="false"
     app:cardUseCompatPadding="true"
+    app:cardElevation="@dimen/card_elevation"
     android:background="@android:color/white">
 
     <LinearLayout
@@ -43,6 +44,7 @@
                 <RelativeLayout
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/vertical_margin"
                     android:orientation="horizontal">
 
                     <TextView
@@ -66,7 +68,7 @@
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="#EEEEEE">
+                android:background="@color/card_footer_color">
 
                 <Button
                     android:id="@+id/cvna_link"

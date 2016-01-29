@@ -41,11 +41,13 @@
         android:textSize="24dp"
         android:text="@string/news"  />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/wlf_info_button"
+        android:layout_margin="7dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/ic_help_outline_black_36dp" />
+        android:background="@drawable/ic_help_outline_white_36dp"/>
 
 </RelativeLayout>

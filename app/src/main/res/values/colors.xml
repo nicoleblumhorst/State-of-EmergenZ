@@ -2,6 +2,8 @@
 
     <color name="button_color">#333333</color>
     <color name="link_color">#00BCD4</color>
+    <color name="card_footer_color">#ffd7d7d7</color>
+    <color name="background_color">#ffe6e6e6</color>
 
     <color name="severe">#F44336</color>
     <color name="severe_light">#FFEBEE</color>

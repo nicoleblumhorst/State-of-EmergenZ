@@ -1,10 +1,12 @@
 package com.nicoleblumhorst.stateofemergenz.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.nicoleblumhorst.stateofemergenz.R;
@@ -51,6 +53,7 @@ public class ThreatLevelFragment extends BaseFragment {
             threatLevel = ThreatLevel.LOW;
 
         levelImageView.setImageResource(threatLevel.getDrawable());
+        view.setBackgroundResource(threatLevel.getColor());
 
         return view;
     }
@@ -63,6 +66,11 @@ public class ThreatLevelFragment extends BaseFragment {
     @OnClick(R.id.wlf_news_button)
     public void newsButtonOnClick() {
         listener.showNews();
+    }
+
+    @OnClick(R.id.wlf_info_button)
+    public void infoButtonOnClick() {
+        listener.showInfoDialog();
     }
 
 }

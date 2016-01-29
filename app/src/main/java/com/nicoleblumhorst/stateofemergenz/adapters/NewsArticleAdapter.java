@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import com.nicoleblumhorst.stateofemergenz.R;
 import com.nicoleblumhorst.stateofemergenz.models.NewsArticle;
+import com.nicoleblumhorst.stateofemergenz.utils.ThreatLevel;
+import com.nicoleblumhorst.stateofemergenz.utils.ThreatLevelUtil;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -51,8 +53,13 @@ public class NewsArticleAdapter extends ArrayAdapter<NewsArticle> {
             convertView.setTag(holder);
         }
 
-        // TODO: set color based on story
-        holder.levelColorView.setBackgroundResource(R.color.guarded_dark);
+        if (!TextUtils.isEmpty(newsArticle.getThreatLevel())) {
+            ThreatLevel threatLevel = ThreatLevelUtil.getThreatLevelFromKey(newsArticle.getThreatLevel());
+            holder.levelColorView.setBackgroundResource(threatLevel.getColor());
+
+        } else {
+            holder.levelColorView.setBackgroundResource(ThreatLevel.LOW.getColor());
+        }
 
         holder.headlineTextView.setText(newsArticle.getHeadline());
         holder.highlightTextView.setText(newsArticle.getArticleHighlight());
