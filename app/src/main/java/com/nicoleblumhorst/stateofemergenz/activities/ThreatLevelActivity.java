@@ -1,12 +1,14 @@
 package com.nicoleblumhorst.stateofemergenz.activities;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -64,8 +66,6 @@ public class ThreatLevelActivity extends AppCompatActivity
             mNavDrawerSelectedId = savedInstanceState.getInt(NAV_DRAWER_SELECTED_ID, R.id.threat_level_menu_item);
         else
             mNavDrawerSelectedId = R.id.threat_level_menu_item;
-
-
 
         if (toolbar != null) {
             setSupportActionBar(toolbar);
@@ -140,12 +140,15 @@ public class ThreatLevelActivity extends AppCompatActivity
         return (ZApplication) getApplication();
     }
 
-    public void setThreatLevel(ThreatLevel level) {
-        getZApplication().setThreatLevel(level);
-    }
-
     public ThreatLevel getThreatLevel() {
-        return getZApplication().getThreatLevel();
+        ThreatLevel level = getZApplication().getThreatLevel();
+
+        if (level == null) {
+            Intent intent = new Intent(this, LoadingActivity.class);
+            startActivity(intent);
+        }
+
+        return level;
     }
 
     @Override

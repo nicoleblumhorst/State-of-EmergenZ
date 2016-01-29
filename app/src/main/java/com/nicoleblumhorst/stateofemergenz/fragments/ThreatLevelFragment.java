@@ -1,12 +1,10 @@
 package com.nicoleblumhorst.stateofemergenz.fragments;
 
-import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.nicoleblumhorst.stateofemergenz.R;
@@ -22,8 +20,8 @@ public class ThreatLevelFragment extends BaseFragment {
 
     public ThreatLevel threatLevel;
 
-    @Bind(R.id.wlf_level_image_view)
-    ImageView levelImageView;
+    @Bind(R.id.wlf_level_text_view)
+    TextView levelTextView;
 
     public static ThreatLevelFragment newInstance(ThreatLevel level) {
         Bundle args = new Bundle();
@@ -52,7 +50,10 @@ public class ThreatLevelFragment extends BaseFragment {
         else
             threatLevel = ThreatLevel.LOW;
 
-        levelImageView.setImageResource(threatLevel.getDrawable());
+        Typeface typeFace = Typeface.createFromAsset(getActivity().getAssets(), "fonts/BOYCOTT_.ttf");
+        levelTextView.setTypeface(typeFace);
+        levelTextView.setText(threatLevel.getTitle());
+
         view.setBackgroundResource(threatLevel.getColor());
 
         return view;

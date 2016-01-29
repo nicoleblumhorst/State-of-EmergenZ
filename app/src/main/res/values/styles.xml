@@ -8,7 +8,6 @@
     </style>
 
     <style name="AppCompat.ActionBar" parent="ThemeOverlay.AppCompat.ActionBar">
-        <!-- Parent theme sets colorControlNormal to textColorPrimary. -->
         <item name="android:textColorPrimary">@android:color/white</item>
     </style>
 
@@ -19,26 +18,31 @@
     <style name="LowTheme" parent="AppTheme">
         <item name="colorPrimary">@color/low</item>
         <item name="colorPrimaryDark">@color/low_dark</item>
+        <item name="colorAccent">@android:color/white</item>
     </style>
 
     <style name="GuardedTheme" parent="AppTheme">
         <item name="colorPrimary">@color/guarded</item>
         <item name="colorPrimaryDark">@color/guarded_dark</item>
+        <item name="colorAccent">@android:color/white</item>
     </style>
 
     <style name="EleveatedTheme" parent="AppTheme">
         <item name="colorPrimary">@color/elevated</item>
         <item name="colorPrimaryDark">@color/elevated_dark</item>
+        <item name="colorAccent">@android:color/black</item>
     </style>
 
     <style name="HighTheme" parent="AppTheme">
         <item name="colorPrimary">@color/high</item>
         <item name="colorPrimaryDark">@color/high_dark</item>
+        <item name="colorAccent">@android:color/black</item>
     </style>
 
     <style name="SevereTheme" parent="AppTheme">
         <item name="colorPrimary">@color/severe</item>
         <item name="colorPrimaryDark">@color/severe_dark</item>
+        <item name="colorAccent">@android:color/white</item>
     </style>
 
     <style name="FlatButton" parent="Widget.AppCompat.Button.Borderless.Colored">
@@ -55,7 +59,7 @@
         <item name="android:drawablePadding">4dp</item>
         <item name="android:textSize">@dimen/text_size_medium</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@android:color/secondary_text_light</item>
+        <item name="android:textColor">@android:color/black</item>
         <item name="android:paddingTop">@dimen/vertical_margin</item>
         <item name="android:paddingBottom">@dimen/vertical_margin</item>
     </style>
@@ -63,15 +67,8 @@
     <style name="CardHeader">
         <item name="android:textSize">@dimen/text_size_medium</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@android:color/secondary_text_light</item>
+        <item name="android:textColor">@android:color/black</item>
         <item name="android:paddingBottom">@dimen/vertical_margin</item>
     </style>
-
-    <!--<style name="CardHeader">-->
-        <!--<item name="android:textSize">20dp</item>-->
-        <!--<item name="android:textStyle">bold</item>-->
-        <!--<item name="android:textColor">@android:color/secondary_text_light</item>-->
-        <!--<item name="android:paddingBottom">@dimen/vertical_margin</item>-->
-    <!--</style>-->
 
 </resources>
