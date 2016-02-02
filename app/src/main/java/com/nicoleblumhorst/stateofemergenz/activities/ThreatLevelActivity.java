@@ -1,6 +1,5 @@
 package com.nicoleblumhorst.stateofemergenz.activities;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -8,12 +7,10 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -24,6 +21,7 @@ import com.nicoleblumhorst.stateofemergenz.ZApplication;
 import com.nicoleblumhorst.stateofemergenz.fragments.AboutFragment;
 import com.nicoleblumhorst.stateofemergenz.fragments.BaseFragment;
 import com.nicoleblumhorst.stateofemergenz.fragments.NewsFragment;
+import com.nicoleblumhorst.stateofemergenz.fragments.ThreatLevelDialogFragment;
 import com.nicoleblumhorst.stateofemergenz.fragments.ThreatLevelFragment;
 import com.nicoleblumhorst.stateofemergenz.utils.ThreatLevel;
 
@@ -167,18 +165,9 @@ public class ThreatLevelActivity extends AppCompatActivity
 
     @Override
     public void showInfoDialog() {
-
-        AlertDialog dialog = new AlertDialog.Builder(this)
-                .setView(getLayoutInflater().inflate(R.layout.fragment_threat_level_info_dialog, null))
-                .setNegativeButton(R.string.close,
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                                dialog.dismiss();
-                            }
-                        }
-                )
-                .create();
-        dialog.show();
+        FragmentManager fm = getSupportFragmentManager();
+        ThreatLevelDialogFragment dialog = new ThreatLevelDialogFragment();
+        dialog.show(fm, dialog.TAG);
     }
 
 }

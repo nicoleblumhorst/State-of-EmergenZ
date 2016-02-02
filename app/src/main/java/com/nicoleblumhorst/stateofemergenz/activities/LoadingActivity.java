@@ -1,33 +1,24 @@
 package com.nicoleblumhorst.stateofemergenz.activities;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.nicoleblumhorst.stateofemergenz.R;
 import com.nicoleblumhorst.stateofemergenz.ZApplication;
 import com.nicoleblumhorst.stateofemergenz.models.ZombieNews;
 import com.nicoleblumhorst.stateofemergenz.services.NewsService;
-import com.nicoleblumhorst.stateofemergenz.utils.ThreatLevel;
 import com.nicoleblumhorst.stateofemergenz.utils.ThreatLevelUtil;
-
-import org.w3c.dom.Text;
-
-import javax.xml.transform.Templates;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import retrofit2.GsonConverterFactory;
 import retrofit2.Call;
 import retrofit2.Callback;
+import retrofit2.GsonConverterFactory;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 

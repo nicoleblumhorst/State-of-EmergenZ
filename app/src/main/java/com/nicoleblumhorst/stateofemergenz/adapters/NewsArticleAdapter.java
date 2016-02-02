@@ -2,7 +2,6 @@ package com.nicoleblumhorst.stateofemergenz.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nicoleblumhorst.stateofemergenz.R;
@@ -20,7 +18,6 @@ import com.nicoleblumhorst.stateofemergenz.utils.ThreatLevelUtil;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 
 import java.util.List;
 

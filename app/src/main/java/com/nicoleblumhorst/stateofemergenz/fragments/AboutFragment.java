@@ -1,7 +1,5 @@
 package com.nicoleblumhorst.stateofemergenz.fragments;
 
-import android.app.Activity;
-import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -11,8 +9,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.nicoleblumhorst.stateofemergenz.R;
-
-import java.security.AccessControlContext;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

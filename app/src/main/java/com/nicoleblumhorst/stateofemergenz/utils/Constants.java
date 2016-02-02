@@ -1,7 +1,5 @@
 package com.nicoleblumhorst.stateofemergenz.utils;
 
-import com.nicoleblumhorst.stateofemergenz.R;
-
 /**
  * Created by nicoleblumhorst on 1/24/16.
  */
