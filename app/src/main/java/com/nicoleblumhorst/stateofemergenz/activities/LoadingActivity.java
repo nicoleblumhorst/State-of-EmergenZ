@@ -11,7 +11,9 @@ import com.nicoleblumhorst.stateofemergenz.R;
 import com.nicoleblumhorst.stateofemergenz.ZApplication;
 import com.nicoleblumhorst.stateofemergenz.models.ZombieNews;
 import com.nicoleblumhorst.stateofemergenz.services.NewsService;
+import com.nicoleblumhorst.stateofemergenz.services.NewsServiceSuccessEvent;
 import com.nicoleblumhorst.stateofemergenz.utils.ThreatLevelUtil;
+import com.squareup.otto.Subscribe;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -25,7 +27,7 @@ import retrofit2.Retrofit;
 /**
  * Created by nicoleblumhorst on 1/24/16.
  */
-public class LoadingActivity extends AppCompatActivity implements Callback<ZombieNews> {
+public class LoadingActivity extends AppCompatActivity {
 
     @Bind(R.id.la_loading_text_view)
     TextView loadingTextView;
@@ -52,23 +54,47 @@ public class LoadingActivity extends AppCompatActivity implements Callback<Zombi
         callService();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        getZApplication().getBus().register(this);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        getZApplication().getBus().unregister(this);
+    }
+
     private void callService() {
         loadingTextView.setVisibility(View.VISIBLE);
         retryButton.setVisibility(View.GONE);
 
         Call<ZombieNews> call = mNewsService.getNews();
-        call.enqueue(this);
+        call.enqueue(new Callback<ZombieNews>() {
+            @Override
+            public void onResponse(Response<ZombieNews> response) {
+                getZApplication().getBus().post(new NewsServiceSuccessEvent(response.body()));
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                Log.d(this.getClass().getSimpleName(), " Service Failure. Error message was: " + t);
+                onFailure(t);
+            }
+        });
     }
 
-    @Override
-    public void onResponse(Response<ZombieNews> response) {
-        ZombieNews zombieNews = response.body();
-        if (zombieNews == null) {
-            Log.i(this.getClass().getSimpleName(), "There was a problem calling the service");
-            loadingTextView.setVisibility(View.GONE);
-            retryButton.setVisibility(View.VISIBLE);
-            return;
-        }
+    public void onFailure(Throwable t) {
+        Log.i(this.getClass().getSimpleName(), "Got a bad response: " + t.getLocalizedMessage());
+
+        loadingTextView.setVisibility(View.GONE);
+        retryButton.setVisibility(View.VISIBLE);
+    }
+
+    @Subscribe
+    public void onSuccessServiceEvent(NewsServiceSuccessEvent event) {
+        ZombieNews zombieNews = event.getmZombieNews();
         Log.i(this.getClass().getSimpleName(), "Got a successful response: " + zombieNews.toString());
 
         getZApplication().setZombieNews(zombieNews);
@@ -78,13 +104,6 @@ public class LoadingActivity extends AppCompatActivity implements Callback<Zombi
         startActivity(intent);
     }
 
-    @Override
-    public void onFailure(Throwable t) {
-        Log.i(this.getClass().getSimpleName(), "Got a bad response: " + t.getLocalizedMessage());
-
-        loadingTextView.setVisibility(View.GONE);
-        retryButton.setVisibility(View.VISIBLE);
-    }
 
     @OnClick(R.id.la_retry_button)
     public void retryButtonOnClick() {
